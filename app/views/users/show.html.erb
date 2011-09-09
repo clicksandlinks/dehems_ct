@@ -1,0 +1,14 @@
+<div class="breadcrumbs">
+	<span class="breadcrumbstitle"><%= t(:views__site__index__you_are_here) %> </span>
+	<%= link_to t(:site__title__home), root_url %> > 
+	<span class="currentbreadcrumb"><%= @title %></span>
+</div>
+
+<%= render :partial => 'layouts/header' %>
+
+<p><label class="fieldlabel"><%= t(:views__users__login__username) %></label><%= @user.login %></p>
+<p><label class="fieldlabel"><%= t(:views__users__edit_user__email) %></label><%= @user.email %></p>
+<p><label class="fieldlabel"><%= t(:views__users__show__dob) %></label><%= @date_of_birth %></p>
+<p><label class="fieldlabel"><%= t(:views__users__show__gender) %></label><%= @user.gender %></p>
+<p><label class="fieldlabel">Latitude:</label><%= @user.latitude %></p>
+<p><label class="fieldlabel">Longitude:</label><%= @user.longitude %></p>

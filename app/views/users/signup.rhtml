@@ -1,0 +1,40 @@
+<div class="breadcrumbs">
+	<span class="breadcrumbstitle"><%= t(:views__site__index__you_are_here) %> </span>
+	<%= link_to t(:site__title__home), root_url %> > 
+	<span class="currentbreadcrumb"><%= @title %></span>
+</div>
+
+<%= render :partial => 'layouts/header' %>
+
+<% form_for :user do |f| -%>
+	<p class="formnotice"><%= t(:views__users__reset_password__required_fields) %></p>
+	
+	<p class="field"><label class="fieldlabel">*<%= t(:views__users__login__username) %></label><%= f.text_field :login, :value => params[:login] %></p>
+	<p class="validationerror"><%= error_message_on :user, :login %></p>
+	
+	<p class="field"><label class="fieldlabel">*<%= t(:views__users__login__password) %></label><%= f.password_field :password, :value => params[:password] %></p>
+	<p class="validationerror"><%= error_message_on :user, :password %></p>
+	
+	<p class="field"><label class="fieldlabel">*<%= t(:views__users__change_password__confirm_password) %></label><%= f.password_field :password_confirmation, :value => params[:password_confirmation] %></p>
+	<p class="validationerror"><%= error_message_on :user, :password_confirmation %></p>
+	
+	<p class="field"><label class="fieldlabel">*<%= t(:views__users__edit_user__email) %></label><%= f.text_field :email, :value => params[:email] %></p>
+	<p class="validationerror"><%= error_message_on :user, :email %></p>
+	
+	<p class="field"><label class="fieldlabel">*<%= t(:views__users__show__dob) %></label><%= f.date_select :dob, :order => [:day, :month, :year], :start_year => Time.now.year - 120, :end_year => Time.now.year, :include_blank => true,  :value => params[:dob] %></p>
+	<p class="validationerror"><%= error_message_on :user, :dob %></p>
+	
+	<p class="field"><label class="fieldlabel">*<%= t(:views__users__show__gender) %></label><%= f.select :gender, options_for_select([["",""], ["Female","Female"], ["Male","Male"]]), :value => params[:gender] %></p>
+	<p class="validationerror"><%= error_message_on :user, :gender %></p>
+	
+	<p class="field"><label class="fieldlabel">*Latitude:</label><%= f.text_field :latitude, :value => params[:latitude] %></p>
+	<p class="validationerror"><%= error_message_on :user, :latitude %></p>
+	
+	<p class="field"><label class="fieldlabel">*Longitude:</label><%= f.text_field :longitude, :value => params[:longitude] %></p>
+	<p class="validationerror"><%= error_message_on :user, :longitude %></p>
+	
+	<p class="field"><%= show_simple_captcha %></p>
+	<p class="validationerror"><%= error_message_on :user, :captcha %></p>
+	
+	<p><%= submit_tag t(:users__title__register), :class => "submitbutton" %></p>
+<% end -%>

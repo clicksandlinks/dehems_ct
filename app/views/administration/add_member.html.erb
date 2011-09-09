@@ -1,0 +1,8 @@
+<%= form_tag :action => "add_member" %>
+	<fieldset>
+		  <label for="name">Name:</label><%= text_field :member, :name %><br />
+		  <label for="name">MAC Address:</label><%= text_field :member, :mac %><br />
+		  <%= hidden_field :member, :team_id, :value => @team_id %>
+		  <%= submit_tag "Add" %>
+	</fieldset>
+</form>

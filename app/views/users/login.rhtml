@@ -1,0 +1,13 @@
+<div class="breadcrumbs">
+	<span class="breadcrumbstitle"><%= t(:views__site__index__you_are_here) %> </span>
+	<%= link_to t(:site__title__home), root_url %> > 
+	<span class="currentbreadcrumb"><%= @title %></span>
+</div>
+
+<% form_tag do -%>
+	<% if !@errors.blank? %><p class="formerror"><%= @errors %></p><% end %>
+	<p class ="field"><label class="fieldlabel"><%= t(:views__users__login__username) %></label><%= text_field_tag 'login', params[:login] %></p>
+	<p class ="field"><label class="fieldlabel"><%= t(:views__users__login__password) %></label><%= password_field_tag 'password' %></p>
+	
+	<p><%= submit_tag t(:users__title__login), :class => "submitbutton" %></p>
+<% end -%>

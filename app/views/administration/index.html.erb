@@ -1,0 +1,23 @@
+<p>
+<%= link_to "Add Team", :action => "add_team" %>
+</p>
+<ul>
+	<% for team in @teams %>
+	<li><%= team.name %>(<%= team.bg_name %>)&nbsp;
+		<%= link_to "View", :action => "view_team", :id => team.id %>&nbsp;
+		<%= link_to "Edit", :action => "edit_team", :id => team.id %>&nbsp;
+		<%= link_to "Remove", :action => "remove_team", :id => team.id %>
+	</li>
+	<% end %>
+</ul>
+<p>
+<%= form_tag :action => "save_competition" %>
+	<fieldset>
+		  <label for="name">Competition Start Date(format yyyy-mm-dd):</label><%= text_field :competition, :start_date %><br />
+		  <%= submit_tag "Save" %>
+	</fieldset>
+</form>
+</p>
+<p>
+<%= link_to "Delete Data", :action => "delete_data" %>
+</p>

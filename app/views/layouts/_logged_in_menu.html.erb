@@ -1,0 +1,11 @@
+<div class="menu">
+	<ul>
+		<li><%= link_to t(:site__title__home), root_url %></li>
+		<li><%= link_to t(:users__title__my_details), user_url(self.current_user.login) %></li>
+		<li><%= link_to t(:users__title__edit_my_details), edit_user_users_url%></li>
+		<li><%= link_to t(:users__title__change_password), change_password_users_url %></li>
+		<li><%= link_to t(:users__title__change_location), change_location_users_url %></li>
+		<li><%= "Not #{self.current_user.login}?" %> <%= link_to t(:users__title__logout), logout_users_url %></li>
+	</ul>
+</div>
+

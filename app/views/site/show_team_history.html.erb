@@ -1,0 +1,103 @@
+<div class="spacer"></div>
+<% if Competition.has_started? %>
+<div id="leadertable">
+	<table>
+		<thead>
+			<tr class="historyheading">
+				<th><%= t(:views__site__view_team__table_household) %></th>
+				<th><%= t(:views__site__view_team__table_baseline) %></th>
+				<th><%= t(:views__site__index__table_w1_to_w2) %></th>
+				<th><%= t(:views__site__index__table_w2_to_w3) %></th>
+				<th><%= t(:views__site__index__table_w3_to_w4) %></th>
+				<th><%= t(:views__site__index__table_w4_to_w5) %></th>
+				<th><%= t(:views__site__index__table_w5_to_w6) %></th>
+				<th><%= t(:views__site__index__table_w6_to_w7) %></th>
+				<th><%= t(:views__site__index__table_w7_to_w8) %></th>
+				<th><%= t(:views__site__index__table_w8_to_w9) %></th>
+				<th><%= t(:views__site__index__table_w9_to_w10) %></th>
+				<th><%= t(:views__site__index__table_w10_to_w11) %></th>
+				<th><%= t(:views__site__index__table_w11_to_w12) %></th>
+				<th><%= t(:views__site__index__table_total) %></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% for member in @team.members %><% 
+				member_points = member.member_points 
+				week1 = 0
+				if member_points[0]
+					week1 = member_points[0].points
+				end
+				week2 = 0
+				if member_points[1]
+					week2 = member_points[1].points
+				end
+				week3 = 0
+				if member_points[2]
+					week3 = member_points[2].points
+				end
+				week4 = 0
+				if member_points[3]
+					week4 = member_points[3].points
+				end
+				sub_total1 = week1 + week2 + week3 + week4
+				week5 = 0
+				if member_points[4]
+					week5 = member_points[4].points
+				end
+				week6 = 0
+				if member_points[5]
+					week6 = member_points[5].points
+				end
+				week7 = 0
+				if member_points[6]
+					week7 = member_points[6].points
+				end
+				week8 = 0
+				if member_points[7]
+					week8 = member_points[7].points
+				end
+				sub_total2 = sub_total1 + week5 + week6 + week7 + week8
+				week9 = 0
+				if member_points[8]
+					week9 = member_points[8].points
+				end
+				week10 = 0
+				if member_points[9]
+					week10 = member_points[9].points
+				end
+				week11 = 0
+				if member_points[10]
+					week11 = member_points[10].points
+				end
+				week12 = 0
+				if member_points[11]
+					week12 = member_points[11].points
+				end
+				total = week1 + week2 + week3 + week4 + week5 + week6 + week7 + week8 + week9 + week10 + week11 + week12
+			%><tr>
+				<td><%= member.name %></td>
+				<td><%= week1 %></td>
+				<td><%= week2 %></td>
+				<td><%= week3 %></td>
+				<td><%= week4 %></td>
+				<td><%= week5 %></td>
+				<td><%= week6 %></td>
+				<td><%= week7 %></td>
+				<td><%= week8 %></td>
+				<td><%= week9 %></td>
+				<td><%= week10 %></td>
+				<td><%= week11 %></td>
+				<td><%= week12 %></td>
+				<td><%= total %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+
+<% else %>
+<div id="intro">
+	<%= t(:views__site__index__not_open) %>
+</div>
+<% end %>
+

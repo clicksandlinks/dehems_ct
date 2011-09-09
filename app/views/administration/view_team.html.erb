@@ -1,0 +1,11 @@
+<p>
+<%= link_to "Add Member", :action => "add_member", :team_id => @team_id %>
+</p>
+<ul>
+	<% for member in @members %>
+	<li><%= member.name %>(<%= member.mac %>)&nbsp;
+		<%= link_to "Remove", :action => "remove_member", :id => member.id, :team_id => @team_id %>&nbsp;
+		<%= link_to "View Data", :action => "view_member_data", :id => member.id %>
+	</li>
+	<% end %>
+</ul>

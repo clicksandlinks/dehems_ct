@@ -1,0 +1,16 @@
+<div class="breadcrumbs">
+	<span class="breadcrumbstitle"><%= t(:views__site__index__you_are_here) %> </span>
+	<%= link_to t(:site__title__home), root_url %> > 
+	<span class="currentbreadcrumb"><%= @title %></span>
+</div>
+
+<%= render :partial => 'layouts/header' %>
+
+<% form_for :user, :url => change_location_users_url do %>
+	<% if !@errors.blank? %><p class="formerror"><%= @errors %></p><% end %>
+	<p class="field"><label class="fieldlabel">Latitude:</label><%= text_field_tag :latitude %></p>
+	<p class="validationerror"><%= error_message_on :user, :latitude %></p>
+	<p class="field"><label class="fieldlabel">Longitude:</label><%= text_field_tag :longitude %></p>
+	<p class="validationerror"><%= error_message_on :user, :longitude %></p>
+	<p><%= submit_tag t(:app__update), :class => "submitbutton" %></p>
+<% end %>

@@ -1,0 +1,11 @@
+<h1><%= t(:app__title)%></h1>
+<% if logged_in? %>
+	<%= render :partial => 'layouts/logged_in_menu' %>
+<% else %>
+	<%= render :partial => 'layouts/logged_out_menu' %>
+<% end %>
+<h2><%= @title %></h2>
+<div class="pagenotices">
+	<% if !flash[:notice].blank? %><span class="notice"><%= flash[:notice] %></span><% end %>
+	<% if !flash[:error].blank? %><span class="error"><%= flash[:error] %></span><% end %>
+</div>

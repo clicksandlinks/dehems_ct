@@ -1,0 +1,104 @@
+body {
+	color: #414142;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	line-height: 1.2em;
+	width: 680px;
+	background: #FFF url('/images/background.jpg') repeat-y; 
+	padding: 10px 10px 10px 10px;
+}
+
+.ct-title-bar {
+	background: #000 url('/images/title_gradient.jpg') repeat-x bottom;
+	padding: 4px 4px 4px 8px;
+	margin-bottom: 2px;
+	color: #fff;
+	font-size: 1.1em;
+}
+
+table{
+	width: 100%;
+	background-color: #fff;
+}
+
+th{
+	padding: 5px 5px 5px 5px;	
+	background: #000 url('http://www.dehems.org/assets/images/title_gradient.jpg') repeat-x bottom;
+	color: #fff;
+}
+
+.historyheading th{
+	padding: 5px 5px 5px 5px;	
+	background: #80a63f;
+	color: #fff;
+}
+
+td{
+	padding: 5px 5px 5px 5px;	
+	border:1px solid #5E853C;
+}
+
+a{	
+	text-decoration: none; 
+	color: #414142;
+}
+
+a:visited{
+	color: #414142;
+}
+
+.showall a{	
+	text-decoration: none; 
+	color: #fff;
+}
+
+.showall a:visited{
+	color: #fff;
+}
+
+#intro {
+	background-color: #fff;
+	padding: 20px 20px 20px 20px;
+	text-align: center;
+	border: 2px solid #5E853C;
+}
+
+.spacer {
+	width: 100%;
+	height: 25px;
+}
+
+.date-label {
+	width: 100px;
+}
+
+#opentime td{
+	border:none;
+}
+
+#opentime table{
+	border:1px solid #5E853C;
+}
+
+#breadcrumbs{
+	color: #FFFFFF;
+}
+
+.breadcrumbstitle {
+	font-weight: bold; 
+}
+
+#breadcrumbs a{	
+	color: #FFFFFF; 
+}
+
+#breadcrumbs a:visited{
+	color: #FFFFFF;
+}
+
+.footer {
+	color: #FFFFFF;
+}
+
+
+
